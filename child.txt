@@ -1,2 +1,0 @@
-file create by child process 0
- end of file
