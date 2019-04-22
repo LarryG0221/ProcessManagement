@@ -21,8 +21,30 @@ def killByPid(pid):
 
 	parent.kill()
 
+def killProcessByServiceOption(service, option1):
+    #kill a process by a certain service and speciall option, such as 
+    # kill process of 'dhclient eth0 '
+    #cmd = ['pidof','dhclient']
+
+    cmd = ['pidof', service]
+
+    ret = Popen(cmd, stdout=PIPE, stderr=STDOUT).communicate()[0].decode('ascii')
+
+    results = ret.strip().split()
+
+    for pidstring in results:
+        print(int(pidstring))
+        processCmdl = psutil.Process(int(pidstring)).cmdline()
+        if processCmdl[-1] == option1:
+            print('--------{}{}'.format((ret[-1]),int(pidstring)))
+            os.kill(int(pidstring), signal.SIGKILL)
+
+
+
 if __name__=='__main__':
 	ppid = 2560
 	killByPid(ppid)
 
 	killByService('dhclient')
+
+	killprocess('dhclient', 'eth1')
