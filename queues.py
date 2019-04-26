@@ -17,7 +17,7 @@ def rand_string(length, output):
 
 # Define an output queue
 output = mp.Queue()
-
+m = mp.Value('i',10)
 # Setup a list of processes that we want to run
 processes = [mp.Process(target=rand_string, args=(5, output)) for x in range(4)]
 
