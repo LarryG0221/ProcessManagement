@@ -7,6 +7,7 @@ def square_list(mylist, mylist1):
     mylist1.value = b'i'
     a = 1
     b= 2
+    c = 3
     
 if __name__ == "__main__":
     mylist = [1,2,3,4]
