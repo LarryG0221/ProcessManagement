@@ -8,6 +8,7 @@ def square_list(mylist, mylist1):
     a = 1
     b= 2
     c = 3
+    d = 9
     
 if __name__ == "__main__":
     mylist = [1,2,3,4]
