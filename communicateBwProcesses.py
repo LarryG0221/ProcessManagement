@@ -5,6 +5,7 @@ result = []
 def square_list(mylist, mylist1):
     print("Result(in process p1): {}".format(result))
     mylist1.value = b'i'
+    a = 1
     
 if __name__ == "__main__":
     mylist = [1,2,3,4]
